@@ -50,21 +50,21 @@ const Paymentsummary = () => {
         </h1>
         <div className="my-7 w-auto">
           <div className="relative w-auto">
-            <table className="w-full text-xl text-center text-black-300 bg-white">
+            <table className="xs:w-[360px]  md:w-[700px] lg:w-[1000px] xs:text-[8px] sm:text-lg md:text-xl text-center text-black-300 bg-white">
               <thead className="">
                 <tr>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="xs:px-0 xs:py-0 sm:px-5 md:px-6 md:py-3 xs:w-[60px] mg:w-[110px] lg:w-[170px]">
                     Member
                   </th>
             
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="xs:px-0 xs:py-0 sm:px-5 md:px-6 md:py-3 xs:w-[60px] mg:w-[110px] lg:w-[170px]">
                     Bill
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="xs:px-0 xs:py-0 sm:px-5 md:px-6 md:py-3 xs:w-[60px] mg:w-[110px] lg:w-[170px]">
                     Paid
                   </th>
                 
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="xs:px-0 xs:py-0 sm:px-5 md:px-6 md:py-3 xs:w-[60px] mg:w-[110px] lg:w-[170px]">
                     Remaining
                   </th>
                 </tr>
@@ -76,19 +76,19 @@ const Paymentsummary = () => {
                     <tr className="bg-white text-lg  mx-auto text-center text-gray-700" key={member}>
                     <th
                       scope="row"
-                      className="px-6 py-4 whitespace-nowrap text-xl"
+                      className="bg-white sm:text-lg xs:text-[8px] md:text-lg  mx-auto text-center text-gray-700"
                     >
                       {member}
                     </th>
-                    <td className="px-6 py-4"> ${ ((Details[member].bill/100)*gst + extracharges/Object.keys(Details).length +Details[member].bill).toFixed(2) } </td>
+                    <td className="xs:px-0 xs:py-1 sm:px-2 xs:text-[8px] sm:text-lg md:text-xl  sm:px-2 md:px-6 md:py-4"> ${ ((Details[member].bill/100)*gst + extracharges/Object.keys(Details).length +Details[member].bill).toFixed(2) } </td>
                     
-                    <td className="px-6 py-4">
-                      <input name={member} className="bg-green-100 p-2" type="number" min="0" value={Details[member].billpaid}
+                    <td className="xs:px-0 xs:py-1 sm:px-2 sm:px-2 md:px-6 md:py-4 sm:text-lg md:text-xl  xs:text-[8px]">
+                      <input name={member} className="bg-green-100 p-2 md:w-auto xs:w-[40px] sm:w-[20px]" type="number" min="0" value={Details[member].billpaid}
                       onChange={handlebill}
                       />
                     </td>
                  
-                    <td className={`px-6 py-4 ${(Details[member].bill/100*gst + extracharges/Object.keys(Details).length +Details[member].bill-Details[member].billpaid).toFixed(2) <= 0 ? 'text-green-500' : 'text-red-600'}`}> 
+                    <td className={`xs:px-0 xs:py-1 xs:text-[8px] sm:text-lg md:text-xl sm:px-2 sm:px-2 md:px-6 md:py-4 ${(Details[member].bill/100*gst + extracharges/Object.keys(Details).length +Details[member].bill-Details[member].billpaid).toFixed(2) <= 0 ? 'text-green-500' : 'text-red-600'}`}> 
           
                     $ {  (Math.abs((((Details[member].bill/100)*gst)+extracharges/Object.keys(Details).length + Details[member].bill-Details[member].billpaid).toFixed(2)))} </td>
                   </tr>
@@ -98,10 +98,10 @@ const Paymentsummary = () => {
 
             
 
-                <tr className="bg-white text-lg  mx-auto text-center text-black-300">
+                <tr className="bg-white md:text-lg xs:text-[8px]  mx-auto text-center text-black-300">
                   <th
                     scope="row"
-                    className="px-6 py-4 whitespace-nowrap text-xl"
+                    className="px-6 py-4 whitespace-nowrap mg:text-xl sm:text-lg xs:text-[8px]"
                   >
                     Amount:
                   </th>
