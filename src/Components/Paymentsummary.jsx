@@ -83,7 +83,7 @@ const Paymentsummary = () => {
                     <td className="xs:px-0 xs:py-1 sm:px-2 xs:text-[8px] sm:text-lg md:text-xl  sm:px-2 md:px-6 md:py-4"> ${ ((Details[member].bill/100)*gst + extracharges/Object.keys(Details).length +Details[member].bill).toFixed(2) } </td>
                     
                     <td className="xs:px-0 xs:py-1 sm:px-2 sm:px-2 md:px-6 md:py-4 sm:text-lg md:text-xl  xs:text-[8px]">
-                      <input name={member} className="bg-green-100 p-2 md:w-auto xs:w-[40px] sm:w-[20px]" type="number" min="0" value={Details[member].billpaid}
+                      <input name={member} className="bg-green-100 p-2  xs:w-[40px] sm:w-[100px] md:w-auto" type="number" min="0" value={Details[member].billpaid}
                       onChange={handlebill}
                       />
                     </td>
